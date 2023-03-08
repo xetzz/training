@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="view point" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+</head>
+ <body>
+    <h3>Pikachu</h3>
+    <div id="content">Pika Pika</div>
+    <div>
+        <input type="text" value="Hello" />
+        <button onclick="check();">Check</button>
+    </div>
+    <div id="result"></div>
+    <button onclick="change();">Change</button>
+    <div>
+        <img id="img" onclick="ChangeImage();" src="3.jpg"
+            style="transition:width 0.5s, height 0.5s;width:400px;height:250px;opacity:0.2"/>
+    </div>
+    <script>
+        function changeImage(){
+            let img=document.querySelector("#img");
+            img.src="4.jpg";
+            img.style.width="400px";
+            img.style.height="250px";
+        }
+        function check(){
+            // 取得想要操作的標籤
+            let element=document.querySelector("#text")
+            // 把使用者打的字後面加上 World 顯示在網頁的另一個標籤裡
+            console.log(element.value);
+            let words=element.value+"World";
+            let result=document.querySelector("#result");
+            result.innerHTML=words;
+        }
+        function change(){
+            let element=document.querySelector("#content"); 
+            element.innerHTML="改變過的內容";
+        }
+    </script>
+</body>
+</html>
